@@ -9,8 +9,11 @@
 # Vector Files
 *.vec
 *.zip
+
+# Audio Files
 *.mp4
 *.wav
+/mmsd_raw_data
 
 
 # User-specific stuff
