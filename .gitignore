@@ -12,8 +12,7 @@
 
 # Audio Files
 *.mp4
-*.wav
-/mmsd_raw_data
+/mmsd_raw_data/**/*.wav
 
 
 # User-specific stuff
