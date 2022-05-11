@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_restful import Api
-from backend.src.Sarcastically import Sarcastically
+from src.Sarcastically import Sarcastically
 
 app = Flask(__name__)
 app.config["DEBUG"] = True

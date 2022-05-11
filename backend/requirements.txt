@@ -1,0 +1,6 @@
+Flask
+flask-cors
+flask-restful
+tensorflow==2.0.0
+librosa
+numpy
