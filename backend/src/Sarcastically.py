@@ -14,7 +14,7 @@ from tensorflow.keras.models import load_model
 
 
 class Sarcastically(Resource):
-    model_folder_path = "/Users/aisirachcha/Documents/IIT Projects/ml-stuff/sarcastically-psdp/backend/static"
+    model_folder_path = "static"
     @staticmethod
     def convert_audio_to_wav(file):
         command = ['ffmpeg', '-y', '-i', '-', '-f', 'wav', '-']
