@@ -122,7 +122,7 @@ function Home() {
       </div>
       <WaveSurferPlayer register={register} onFileChange={isFileValidType} />
      </section>
-     <section className="grid grid-cols-12 my-8 gap-8 md:gap-24">
+     <section className="grid grid-cols-12 my-8 gap-8 md:gap-16">
       <div className="col-span-12 md:col-span-6 flex flex-col gap-8">
        <div className="flex flex-col gap-2">
         <h3>2. Type what you said</h3>
