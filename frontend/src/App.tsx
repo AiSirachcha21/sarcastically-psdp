@@ -19,7 +19,6 @@ function App() {
  const {
   register,
   handleSubmit,
-  control,
   formState: { errors },
   setError
  } = useForm<Inputs>();
@@ -87,13 +86,13 @@ function App() {
  const submitPredictionRequest = useMutation(postPredictionInputs, {
   onSuccess: ({ data: { result } }) => {
    const state =
-    result == 0 ? SarcasmState.SARCSTIC : SarcasmState.NON_SARCSTIC;
+    result === 0 ? SarcasmState.SARCSTIC : SarcasmState.NON_SARCSTIC;
    updateSarcasmState(state);
   }
  });
 
  return (
-  <div className="min-h-screen w-11/12 mx-auto">
+  <div className="min-h-screen w-11/12 max-w-screen-xl mx-auto">
    <NavBar />
    <form onSubmit={handleSubmit(onSubmit)}>
     <section>
@@ -140,7 +139,7 @@ function App() {
       <h3 className="text-base font-semibold">Result :</h3>
       <p
        className={clsx(
-        sarcasmState.state == SarcasmState.NOT_SET ||
+        sarcasmState.state === SarcasmState.NOT_SET ||
          submitPredictionRequest.isLoading
          ? "text-xl font-semibold"
          : "text-4xl font-bold",
