@@ -1,10 +1,6 @@
 import clsx from "clsx";
 import { useEffect, useRef, useState } from "react";
-import {
- RefCallBack,
- UseFormRegister,
- UseFormRegisterReturn
-} from "react-hook-form";
+import { UseFormRegister } from "react-hook-form";
 import { BsFillPlayFill, BsFillStopFill, BsUpload } from "react-icons/bs";
 import WaveSurfer from "wavesurfer.js";
 import { Inputs } from "../../common/constants/types";
