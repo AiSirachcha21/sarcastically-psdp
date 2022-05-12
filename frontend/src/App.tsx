@@ -1,15 +1,13 @@
 import WaveSurferPlayer from "./components/WaveSurfer/WaveSurfer";
 import NavBar from "./components/Navbar/Navbar";
-import { useCallback, useEffect, useState } from "react";
+import { useState } from "react";
 import Button from "./components/Button/Button";
 import { SarcasmState } from "./common/constants/enums";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { DevTool } from "@hookform/devtools";
 import { Inputs, PredictionResponse } from "./common/constants/types";
 import { SarcasmStateStrings } from "./common/constants/constants";
 import clsx from "clsx";
 import axios, { AxiosResponse } from "axios";
-import { url } from "inspector";
 import { useMutation } from "react-query";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 

@@ -5,7 +5,7 @@ import App from "./App";
 import axios from "axios";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-axios.defaults.baseURL = "http://127.0.0.1:5000";
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 const queryClient = new QueryClient();
 
