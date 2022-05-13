@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+ * {
+  @apply font-poppins;
+  @apply text-neutral-700;
+ }
+
+ body {
+  @apply bg-slate-50;
+ }
+
+ h1 {
+  @apply text-2xl md:text-4xl font-semibold mb-2;
+ }
+
+ h2 {
+  @apply text-xl md:text-3xl font-semibold mb-2;
+ }
+}

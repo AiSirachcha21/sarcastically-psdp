@@ -26,7 +26,12 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "tailwind:build": "tailwind build -i ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css",
+    "tailwind:watch": "tailwind build -i ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css --watch",
+    "prestart": "yarn tailwind:build",
+    "start:dev": "concurrently \"react-scripts start\" \"yarn tailwind:watch\"",
+    "start": "concurrently \"react-scripts start\" \"yarn tailwind:build\"",
+    "prebuild": "yarn tailwind:build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -54,6 +59,7 @@
     "@types/react-icons": "^3.0.0",
     "@types/wavesurfer.js": "^6.0.3",
     "autoprefixer": "^10.4.7",
+    "concurrently": "^7.1.0",
     "postcss": "^8.4.13",
     "tailwindcss": "^3.0.24"
   }
