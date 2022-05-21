@@ -48,13 +48,7 @@ const WaveSurferPlayer = ({ onFileChange, register }: Props) => {
   }
 
   if (waveSurfer.current) {
-   if (selectedFile) {
-    let url = URL.createObjectURL(selectedFile);
-    waveSurfer.current.load(url);
-   } else {
-    waveSurfer.current.load(`${process.env.PUBLIC_URL}/audio/default.wav`);
-   }
-
+   waveSurfer.current.load(`${process.env.PUBLIC_URL}/audio/default.wav`);
    waveSurfer.current.on("finish", handleOnFinish);
    waveSurfer.current.util.preventClick();
    waveSurfer.current.setVolume(1);
@@ -63,7 +57,7 @@ const WaveSurferPlayer = ({ onFileChange, register }: Props) => {
   return () => {
    waveSurfer.current && waveSurfer.current.unAll();
   };
- }, [selectedFile]);
+ }, []);
 
  function handleWavesurferPlayStateChange() {
   if (waveSurfer.current) {
@@ -77,6 +71,9 @@ const WaveSurferPlayer = ({ onFileChange, register }: Props) => {
   const [fileUploaded]: File[] = event.target.files;
   if (onFileChange && fileUploaded) {
    setSelectedFile(fileUploaded);
+
+   let url = URL.createObjectURL(fileUploaded);
+   waveSurfer.current?.load(url);
    onFileChange(fileUploaded);
   }
  }
