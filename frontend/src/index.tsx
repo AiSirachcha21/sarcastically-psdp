@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
 import axios from "axios";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Router from "./Router";
 
-axios.defaults.baseURL = "http://127.0.0.1:5000";
+axios.defaults.baseURL = process.env.REACT_APP_API;
 
 const queryClient = new QueryClient();
 
@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
  <React.StrictMode>
   <QueryClientProvider client={queryClient}>
-   <App />
+   <Router />
   </QueryClientProvider>
  </React.StrictMode>
 );
